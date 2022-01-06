@@ -8,48 +8,15 @@ _Note:_ A word's "score" is how many words share the same letters at
 each of its letter's positions.
 
 ```
-Top 5 words:
-┌─────────┬─────────┬───────┐
-│ (index) │  word   │ score │
-├─────────┼─────────┼───────┤
-│    0    │ 'sanes' │ 15085 │
-│    1    │ 'sales' │ 14931 │
-│    2    │ 'bares' │ 14878 │
-│    3    │ 'cares' │ 14835 │
-│    4    │ 'tares' │ 14587 │
-└─────────┴─────────┴───────┘
-
-Top 5 words (no upper case or duplicate letters):
-┌─────────┬─────────┬───────┐
-│ (index) │  word   │ score │
-├─────────┼─────────┼───────┤
-│    0    │ 'bares' │ 14878 │
-│    1    │ 'cares' │ 14835 │
-│    2    │ 'tares' │ 14587 │
-│    3    │ 'mares' │ 14548 │
-│    4    │ 'pares' │ 14507 │
-└─────────┴─────────┴───────┘
-
-Top 5 words (letter position agnostic):
-┌─────────┬─────────┬───────┐
-│ (index) │  word   │ score │
-├─────────┼─────────┼───────┤
-│    0    │ 'Aeaea' │ 18813 │
-│    1    │ 'sessa' │ 18656 │
-│    2    │ 'sasse' │ 18656 │
-│    3    │ 'asses' │ 18656 │
-│    4    │ 'eases' │ 18141 │
-└─────────┴─────────┴───────┘
-
 Top 5 words (letter position agnostic, no upper case or duplicate letters):
 ┌─────────┬─────────┬───────┐
 │ (index) │  word   │ score │
 ├─────────┼─────────┼───────┤
-│    0    │ 'seora' │ 16392 │
-│    1    │ 'arose' │ 16392 │
-│    2    │ 'aeons' │ 15948 │
-│    3    │ 'osela' │ 15794 │
-│    4    │ 'alose' │ 15794 │
+│    0    │ 'serai' │ 45884 │
+│    1    │ 'raise' │ 45884 │
+│    2    │ 'arise' │ 45884 │
+│    3    │ 'seora' │ 45797 │
+│    4    │ 'arose' │ 45797 │
 └─────────┴─────────┴───────┘
 ```
 

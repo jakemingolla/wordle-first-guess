@@ -19,6 +19,25 @@ const containsDuplicateLetters = word => {
   return new Set(letters).size !== letters.length;
 };
 
+const scoreWordWithPosition = (word, positionalLetterDictionary) => {
+  const scores = word.split('').map((letter, index) => {
+    letter = letter.toLowerCase();
+    return positionalLetterDictionary[index][letter];
+  });
+
+  return scores.reduce((a, b) => a + b, 0);
+};
+
+const scoreWordPositionAgnostic = (word, positionalLetterDictionary) => {
+  const scores = word.split('').map((letter) => {
+    letter = letter.toLowerCase();
+    return positionalLetterDictionary
+      .map((x) => x[letter])
+      .reduce((a, b) => a + b, 0);
+  });
+  return scores.reduce((a, b) => a + b, 0);
+};
+
 const main = async () => {
   const raw = await fs.readFile(FILE_NAME, { encoding: 'utf-8' });
   const allWords = raw.split('\n');
@@ -47,23 +66,15 @@ const main = async () => {
   });
 
   const scoredWords = validWords.map((word) => {
-    const scores = word.split('').map((letter, index) => {
-      letter = letter.toLowerCase();
-      return positionalLetterDictionary[index][letter];
-    });
-
-    return { word, score: scores.reduce((a, b) => a + b, 0) };
+    return {
+      word, score: scoreWordWithPosition(word, positionalLetterDictionary)
+    };
   }).sort((a, b) => a.score < b.score ? 1 : -1);
 
   const scoredWordsPositionAgnostic = validWords.map((word) => {
-    const scores = word.split('').map((letter) => {
-      letter = letter.toLowerCase();
-      return Math.max(
-        ...positionalLetterDictionary.map((x) => x[letter])
-      );
-    });
-
-    return { word, score: scores.reduce((a, b) => a + b, 0) };
+    return {
+      word, score: scoreWordPositionAgnostic(word, positionalLetterDictionary)
+    };
   }).sort((a, b) => a.score < b.score ? 1 : -1);
 
   const topWords = scoredWords.slice(0, NUM_WORDS_REPORTED);
@@ -94,6 +105,7 @@ const main = async () => {
   console.log(`\nTop ${NUM_WORDS_REPORTED} words ` +
     '(letter position agnostic, no upper case or duplicate letters):');
   console.table(topWordsPositionAgnosticNoUpperCaseOrDuplicates);
+
 };
 
 return main();
