@@ -18,6 +18,16 @@ Top 5 words (letter position agnostic, no upper case or duplicate letters):
 │    3    │ 'seora' │ 45797 │
 │    4    │ 'arose' │ 45797 │
 └─────────┴─────────┴───────┘
+Top 5 words (no upper case or duplicate letters):
+┌─────────┬─────────┬───────┐
+│ (index) │  word   │ score │
+├─────────┼─────────┼───────┤
+│    0    │ 'bares' │ 14878 │
+│    1    │ 'cares' │ 14835 │
+│    2    │ 'tares' │ 14587 │
+│    3    │ 'mares' │ 14548 │
+│    4    │ 'pares' │ 14507 │
+└─────────┴─────────┴───────┘
 ```
 
 ## Usage
