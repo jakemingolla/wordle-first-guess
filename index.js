@@ -105,7 +105,6 @@ const main = async () => {
   console.log(`\nTop ${NUM_WORDS_REPORTED} words ` +
     '(letter position agnostic, no upper case or duplicate letters):');
   console.table(topWordsPositionAgnosticNoUpperCaseOrDuplicates);
-
 };
 
 return main();
